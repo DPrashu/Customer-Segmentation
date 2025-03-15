@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Segmentation</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/landing_page.css') }}">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <button class="use-app-btn" id="useAppButton">Use the App</button>
+        <button class="auth-btn" id="loginButton">Login</button>
+        <button class="auth-btn" id="signupButton">Sign Up</button>
+
+        <script>
+            document.getElementById("useAppButton").addEventListener("click", function() {
+                window.location.href = "/applications";
+            });
+
+            document.getElementById("loginButton").addEventListener("click", function() {
+                window.location.href = "/login";
+            });
+
+            document.getElementById("signupButton").addEventListener("click", function() {
+                window.location.href = "/signup";
+            });
+        </script>
+
+        <div class="overlay">
+            <h1>Customer Segmentation</h1>
+            <p>Harness the power of AI-driven analytics to boost business growth! 🚀</p>
+            <a href="#about" class="btn">Learn More</a>
+        </div>
+    </header>
+
+    <section id="about" class="about">
+        <h2>📌 About the Project</h2>
+        <div class="about-content">
+            <p>
+                Our Customer Segmentation System uses Machine Learning and RFM Analysis to 
+                classify customers into distinct groups. This helps businesses increase retention, optimize marketing strategies, and boost sales by identifying high-value customers and potential churners.
+            </p>
+            <img src="https://as2.ftcdn.net/jpg/10/25/01/25/1000_F_1025012561_fpLDY6LYeTbKGZr8OOzlqBeQSVmltqVf.webp" alt="Data Analytics">
+        </div>
+    </section>
+
+    <section class="features">
+        <h2>🌟 Key Features</h2>
+        <div class="feature-grid">
+            <div class="feature-box">
+                <i class="fas fa-chart-line"></i>
+                <h3>Real-time Analysis</h3>
+                <p>Analyze customer data dynamically with AI-powered insights.</p>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-database"></i>
+                <h3>Data-driven Decisions</h3>
+                <p>Make smart decisions backed by data visualization and reports.</p>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-user-tag"></i>
+                <h3>Customer Categorization</h3>
+                <p>Identify loyal customers, frequent buyers, and at-risk users.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact">
+        <h2>📩 Contact Us</h2>
+        <p>Got questions? Reach out at <a href="mailto:support@customersegment.com">support@customersegment.com</a></p>
+    </section>
+
+    <footer>
+        <p>© 2025 Customer Segmentation Project | All Rights Reserved</p>
+    </footer>
+
+    <script type="text/javascript" src="{{ url_for('static',filename='script/landing_page.js') }}" defer></script>
+</body>
+</html>

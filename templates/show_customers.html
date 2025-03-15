@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cluster {{ cluster_id }} Customers</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+        h1 {
+            color: #f39c12;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ffffff;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f39c12;
+            color: #121212;
+        }
+        tr:nth-child(even) {
+            background-color: #2c2c2c;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 15px;
+            background-color: #f39c12;
+            color: #121212;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background-color: #e67e22;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Customers in Cluster {{ cluster_id }}</h1>
+        {% if customers %}
+            <table>
+                <tr>
+                    <th>Customer ID</th>
+                    <th>Recency</th>
+                    <th>Frequency</th>
+                    <th>Monetary</th>
+                    <th>Cluster ID</th>
+                </tr>
+                {% for customer in customers %}
+                    <tr>
+                        <td>{{ customer['CustomerID'] }}</td>
+                        <td>{{ customer['Recency'] }}</td>
+                        <td>{{ customer['Frequency'] }}</td>
+                        <td>{{ customer['Monetary'] }}</td>
+                        <td>{{ customer['Cluster_id'] }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <p>No customers found in this cluster.</p>
+        {% endif %}
+        <br>
+        <a class="btn" href="/select_cluster">Back to Cluster Selection</a>
+    </div>
+</body>
+</html>

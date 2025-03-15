@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Segmentation</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/user_logged_in.css') }}">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <button class="use-app-btn" id="useAppButton">Use the App</button>
+        <button class="logout-btn" id="logoutButton">Logout</button>
+
+        <script>
+            document.getElementById("useAppButton").addEventListener("click", function() {
+                window.location.href = "/input";
+            });
+
+            document.getElementById("logoutButton").addEventListener("click", function() {
+                window.location.href = "/logout";
+            });
+        </script>
+
+        <div class="overlay">
+            <h1>Customer Segmentation</h1>
+            <p>Harness the power of AI-driven analytics to boost business growth! 🚀</p>
+            <a href="#about" class="btn">Learn More</a>
+        </div>
+    </header>
+
+    <section id="about" class="about">
+        <h2>📌 About the Project</h2>
+        <div class="about-content">
+            <p>
+                Our Customer Segmentation System uses Machine Learning and RFM Analysis to 
+                classify customers into distinct groups. This helps businesses **increase retention, optimize marketing strategies, and boost sales** by identifying high-value customers and potential churners.
+            </p>
+            <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.shutterstock.com%2Fsearch%2Fbusiness-technology&psig=AOvVaw27du-4AC_GxwfQotVUfw9d&ust=1741258181549000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCMC5-K3i8osDFQAAAAAdAAAAABAE" alt="Data Analytics">
+        </div>
+    </section>
+
+    <section class="features">
+        <h2>🌟 Key Features</h2>
+        <div class="feature-grid">
+            <div class="feature-box">
+                <i class="fas fa-chart-line"></i>
+                <h3>Real-time Analysis</h3>
+                <p>Analyze customer data dynamically with AI-powered insights.</p>
+                <button class="feature-btn" onclick="location.href='/api/real_time_analysis'">Click Here</button>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-database"></i>
+                <h3>Data-driven Decisions</h3>
+                <p>Make smart decisions backed by data visualization and reports.</p>
+                <button class="feature-btn" onclick="location.href='/api/data_decisions'">Click Here</button>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-user-tag"></i>
+                <h3>Customer Categorization</h3>
+                <p>Identify loyal customers, frequent buyers, and at-risk users.</p>
+                <button class="feature-btn" onclick="location.href='/api/customer_categorization'">Click Here</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact">
+        <h2>📩 Contact Us</h2>
+        <p>Got questions? Reach out at <a href="mailto:support@customersegment.com">support@customersegment.com</a></p>
+    </section>
+
+    <footer>
+        <p>© 2025 Customer Segmentation Project | All Rights Reserved</p>
+    </footer>
+
+    <script type="text/javascript" src="{{ url_for('static',filename='script/user_logged_in.js') }}" defer></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Segmentation - Input Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/input_form.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>📋 Enter Customer Details</h2>
+        
+        <form id="customer-form" action="/submit" method="POST">
+            <!-- Customer ID -->
+            <div class="form-group">
+                <label for="customer_id">Customer ID</label>
+                <input type="text" id="customer_id" name="customer_id" maxlength="10" placeholder="Enter Customer ID">
+                <small id="char-counter">0/10</small>
+            </div>
+
+            <!-- Country Selection -->
+            <div class="form-group">
+                <label for="country">Country of Residence</label>
+                <select id="country" name="country">
+                    <option value="">Select a Country</option>
+                    {% for country in countries %}
+                        <option value="{{ country }}">{{ country }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <!-- Transaction Amount -->
+            <div class="form-group">
+                <label for="transaction_amount">Total Amount of Transaction</label>
+                <input type="text" id="transaction_amount" name="transaction_amount" placeholder="₹ Enter amount">
+            </div>
+
+            <!-- Last Visit Date -->
+            <div class="form-group">
+                <label for="last_visit">Last Visit Date</label>
+                <input type="date" id="last_visit" name="last_visit">
+            </div>
+
+            <!-- Total Visits -->
+            <div class="form-group">
+                <label for="total_visits">Total Number of Visits</label>
+                <input type="number" id="total_visits" name="total_visits" min="1" placeholder="Enter number of visits">
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" id="submit-btn" disabled>Submit</button>
+        </form>
+    </div>
+
+    <script type="text/javascript" src="{{ url_for('static', filename='script/input_form.js') }}" defer></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Segmentation</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #1e1e1e, #333);
+            color: #ffffff;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            justify-content: center;
+        }
+        .container {
+            max-width: 600px;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .feature {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 6px;
+            font-size: 18px;
+            transition: transform 0.3s ease;
+        }
+        .feature:hover {
+            transform: scale(1.05);
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 20px;
+            margin-top: 10px;
+            background-color: #f39c12;
+            color: #121212;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s ease, transform 0.2s ease;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background-color: #e67e22;
+            transform: scale(1.1);
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let features = document.querySelectorAll(".feature");
+            features.forEach((feature, index) => {
+                setTimeout(() => {
+                    feature.style.opacity = 1;
+                    feature.style.transform = "translateY(0)";
+                }, index * 300);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Explore Customer Segmentation</h1>
+        <div class="feature" style="opacity: 0; transform: translateY(20px); transition: all 0.5s ease;">
+            <p>Assign a cluster to a random customer.</p>
+            <a href="/input" class="btn">Try Now</a>
+        </div>
+        <div class="feature" style="opacity: 0; transform: translateY(20px); transition: all 0.5s ease;">
+            <p>Get the cluster-wise list of customers.</p>
+            <a href="/select_cluster" class="btn">View List</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Cluster</title>
+    <style>
+        /* Background Styling */
+        body {
+            background: url('https://as2.ftcdn.net/v2/jpg/09/87/13/11/1000_F_987131119_02uSbc2vrZUb13QzNXkdQDqcCVLcZHnn.jpg') no-repeat center center/cover;
+            color: #ffffff;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            padding: 50px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Floating Particles */
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+
+        .particle {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: rgba(255, 165, 0, 0.7);
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: float 6s infinite linear;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+                opacity: 0.5;
+            }
+            50% {
+                transform: translateY(-30px);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(0px);
+                opacity: 0.5;
+            }
+        }
+
+        /* Glassmorphism Container */
+        .container {
+            max-width: 450px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease-in-out;
+            position: relative;
+            z-index: 2;
+        }
+
+        .container:hover {
+            transform: scale(1.02);
+        }
+
+        h1 {
+            font-size: 26px;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #f39c12, #ffcc33);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Button Styling */
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            background: linear-gradient(45deg, #f39c12, #ff5733);
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background: rgba(255, 255, 255, 0.3);
+            transition: all 0.5s ease;
+            border-radius: 50%;
+            transform: translate(-50%, -50%) scale(0);
+        }
+
+        .btn:hover::before {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .btn:hover {
+            background: linear-gradient(45deg, #ff5733, #f39c12);
+            box-shadow: 0 0 15px rgba(255, 165, 0, 0.8);
+            transform: scale(1.05);
+        }
+
+        /* Glow Effect */
+        .btn:active {
+            transform: scale(0.98);
+            box-shadow: 0 0 20px rgba(255, 165, 0, 1);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Floating Particles -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Cluster Selection Container -->
+    <div class="container">
+        <h1>Select a Cluster</h1>
+        <button class="btn" onclick="location.href='/customers/0'">🔥 Cluster 0</button>
+        <button class="btn" onclick="location.href='/customers/1'">💡 Cluster 1</button>
+        <button class="btn" onclick="location.href='/customers/2'">🚀 Cluster 2</button>
+        <button class="btn" onclick="location.href='/customers/3'">✨ Cluster 3</button>
+    </div>
+
+    <!-- JavaScript for Floating Particles -->
+    <script>
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+
+            for (let i = 0; i < 20; i++) {
+                let particle = document.createElement('div');
+                particle.classList.add('particle');
+
+                let size = Math.random() * 8 + 3;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                
+                particle.style.animationDuration = `${Math.random() * 3 + 3}s`;
+
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        createParticles();
+    </script>
+
+</body>
+</html>
