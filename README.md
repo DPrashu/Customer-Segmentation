@@ -156,8 +156,8 @@ RFM values are computed from these fields and stored in a processed DataFrame (`
 ### 🧪 Local Setup (Optional)
 
 ```bash
-git clone https://github.com/yourusername/oct-diagnosis.git
-cd oct-diagnosis
+git clone https://github.com/DPrashu/Customer-Segmentation.git
+cd Customer-Segmentation
 pip install -r requirements.txt
-streamlit run app.py
+streamlit run streamlit_app.py
 
